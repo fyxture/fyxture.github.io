@@ -12,14 +12,14 @@ Para ~~a maioria~~ **todas** essas tarefas existem inúmeros códigos/projetos/f
 Mas nenhum deles abstrai toda a parafernália de configurações para focar apenas no que interessa a quem está implementando testes (ou une todos eles sobe uma mesma interface - simples e fluente).
 
 Esse é o objetivo de ***Fyxture***, que conta com 6 módulos principais (outros estão previstos para releases futuras):
-* [Fyxture.db](## Fyxture.db)
-* [Fyxture.rest](## Fyxture.rest)
-* [Fyxture.file](## Fyxture.file)
-* [Fyxture.properties](## Fyxture.properties)
-* [Fyxture.yaml](## Fyxture.yaml)
-* [Fyxture.json](## Fyxture.json)
+* [Fyxture.db](#Fyxture.db)
+* [Fyxture.rest](#Fyxture.rest)
+* [Fyxture.file](#Fyxture.file)
+* [Fyxture.properties](#Fyxture.properties)
+* [Fyxture.yaml](#Fyxture.yaml)
+* [Fyxture.json](#Fyxture.json)
 
-## Fyxture.db
+## <a name="Fyxture.db"></a>Fyxture.db
 
 Esse módulo utiliza o bastante maduro [Liquibase](http://liquibase.org) como executor de scripts banco.
 
@@ -34,7 +34,7 @@ O parâmetro de **db**, `integration/db`, é uma convenção para que ***Fyxture
 
 Já o parâmetro de **go**, `integration/db/criar-pessoa.yml`, é um caminho, dentro do classpath, para o [*changelog*](http://www.liquibase.org/documentation/databasechangelog.html) a ser executado.
 
-## Fyxture.rest
+## <a name="Fyxture.rest"></a>Fyxture.rest
 
 Já este módulo utiliza o já conhecido subprojeto da Apache [HTTPComponents](https://hc.apache.org/) para realizar requisições a API REST.
 ```java
@@ -57,24 +57,24 @@ Por fim, o método **go**, efetiva a requisição.
 
 O retorno é um objeto que encapsula a resposta bem como a transforma, se assim solicitado, em um objeto JSON, permitindo percorrer suas propriedades como tal.
 
-## Fyxture.file
+## <a name="Fyxture.file"></a>Fyxture.file
 
 O método file faz uso da biblioteca [commons-io](https://commons.apache.org/proper/commons-io/), também da Apache, para mapear e criar uma cache dos arquivos referenciados.
 ```java
 Fyxture
-  file("integration/rest/servico.yml");
+  .file("integration/rest/servico.yml");
 ```
 
 Esse método é muito utilizado na implementação dos demais, permitindo facilmente carregar seu conteúdo e utiliza-lo conforme a necessidade.
 
-## Fyxture.properties
+## <a name="Fyxture.properties"></a>Fyxture.properties
 
 Esse método abstrai a lógica por trás do processo de carga de um arquivo de propriedades que se encontra no classpath.
 
-## Fyxture.yml
+## <a name="Fyxture.yml"></a>Fyxture.yml
 
 Esse método carrega um arquivo do tipo YAML e disponibiliza uma forma de percorrer suas propriedades. Além de conversores para outros formatos conhecidos, a saber, JSON.
 
-## Fyxture.json
+## <a name="Fyxture.json"></a>Fyxture.json
 
 Esse método carrega um arquivo do tipo JSON e disponibiliza uma forma de percorrer suas propriedades.
