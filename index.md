@@ -1,4 +1,4 @@
-# Fyxture
+# Fyxture [![BuildStatus](https://travis-ci.org/fyxture/fyxture.svg?branch=master)](https://travis-ci.org/fyxture/fyxture)
 
 Se você já implementou testes de integração automatizados já precisou realizar uma das operações:
 * Criar, recuperar, atualizar ou excluir dados de um banco;
